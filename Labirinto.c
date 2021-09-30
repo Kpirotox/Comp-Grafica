@@ -30,7 +30,7 @@ int desenha=0;
 int random[9], rand2;
 int main(void)
 {
-	// Define do modo de operaÁ„o da GLUT
+	// Define do modo de opera√ß√£o da GLUT
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(250,20); 
 	glutInitWindowSize(800,600); 
@@ -46,7 +46,7 @@ int main(void)
 }
 
 
-// FunÁ„o callback chamada para fazer o desenho
+// Fun√ß√£o callback chamada para fazer o desenho
 void Desenha(){
 
 	if (life>0){
@@ -65,12 +65,12 @@ void Desenha(){
 		glEnd();
 		desenhaObjeto();
 		desenhaLinhas();
-		//Executa os comandos OpenGL para renderizaÁ„o.
+		//Executa os comandos OpenGL para renderiza√ß√£o.
 		glFlush();
 	}else{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glColor3f(0,0,0);
-		// Posiciona o texto stroke usando transformaÁıes geomÈtricas
+		// Posiciona o texto stroke usando transforma√ß√µes geom√©tricas
 		glPushMatrix();	
 		glTranslatef(15,100,0);
 		glScalef(0.2, 0.2, 0.2); // diminui o tamanho do fonte
@@ -84,9 +84,9 @@ void Desenha(){
 	}
 }
 
-// Muitos estados OpenGL devem ser determinados somente uma vez e n„o a cada vez que o rendering È realizado. AS funÁıes dentro desta s„o executas uma vez sÛ
+// Muitos estados OpenGL devem ser determinados somente uma vez e n√£o a cada vez que o rendering √© realizado. AS fun√ß√µes dentro desta s√£o executas uma vez s√≥
 void Inicializa(){
-	//Define a cor de fundo da janela de visualizaÁ„o
+	//Define a cor de fundo da janela de visualiza√ß√£o
 	int i,j;
 	life = 3;
 	//zerando o mapa
@@ -112,7 +112,7 @@ void Inicializa(){
 	glFlush();
 }
 
-// FunÁ„o callback chamada para gerenciar eventos de teclas
+// Fun√ß√£o callback chamada para gerenciar eventos de teclas
 void Teclado (unsigned char key, int x, int y)
 {
 	if (key == 27)
@@ -139,7 +139,7 @@ void tecladoSpec (int key, int x, int y){
 				xf+=1;
 		}
 
-//		colisao();
+		colisao();
 		if (!venceu())
 		glutPostRedisplay();
 }
@@ -204,7 +204,7 @@ int venceu(){
 		if (MAP[xf][yf+i]==2 || MAP[xf+i][yf]==2 || MAP[xf+i][yf+quad]==2 || MAP[xf+quad][yf+i]==2){
 			glClear(GL_COLOR_BUFFER_BIT);
 			glColor3f(0,0,0);
-			// Posiciona o texto stroke usando transformaÁıes geomÈtricas
+			// Posiciona o texto stroke usando transforma√ß√µes geom√©tricas
 			glPushMatrix();	
 			glTranslatef(15,100,0);
 			glScalef(0.2, 0.2, 0.2); // diminui o tamanho do fonte
@@ -230,7 +230,7 @@ void colisao(){
 
 void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 {
-	// Especifica as dimensıes da Viewport
+	// Especifica as dimens√µes da Viewport
 	glViewport(0, 0, w, h);
 	view_w = w;
 	view_h = h;
@@ -246,7 +246,7 @@ void GerenciaMouse(int button, int state, int x, int y)
 {
     
     srand(time(NULL));
-    if (button == GLUT_LEFT_BUTTON)  // se o bot„o È o esquerdo do mouse
+    if (button == GLUT_LEFT_BUTTON)  // se o bot√£o √© o esquerdo do mouse
          if (state == GLUT_DOWN) {  // estado pressionado DOWN(para baixo) 
             a = rand() % 101;
             a = a/100;
